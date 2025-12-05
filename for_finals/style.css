@@ -1,0 +1,152 @@
+/* Reset & global */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+    height: 100%;
+    font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+    background: #0e0633;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container for all pages */
+.container, form, .box {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 850px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+    margin: 20px auto;
+}
+
+/* Headings */
+h1, h2, label {
+    text-align: center;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-shadow: 0 6px 30px rgba(255,43,144,0.08);
+}
+
+/* Labels inside forms */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Inputs & selects */
+input[type="text"], select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    height: 45px;
+}
+
+input[type="text"]:focus, select:focus {
+    background: rgba(255,43,144,0.2);
+    box-shadow: 0 4px 14px rgba(255,43,144,0.35);
+}
+
+/* Select + Reset wrapper */
+.select-reset-wrapper {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Make select take full available width */
+.select-reset-wrapper select {
+    flex: 1;             /* fills remaining space */
+    min-width: 0;        /* prevents overflow */
+    height: 45px;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255,43,144,0.25);
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.select-reset-wrapper select:focus {
+    background: rgba(255,43,144,0.4);
+    box-shadow: 0 4px 14px rgba(255,43,144,0.5);
+}
+
+/* Reset button */
+.inline-reset {
+    padding: 0 20px;       /* consistent width */
+    height: 45px;          /* same as select */
+    font-size: 16px;
+    border-radius: 12px;
+    background: linear-gradient(90deg,#ff2b90,#ff5aa3);
+    box-shadow: 0 6px 20px rgba(255,43,144,0.3);
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    flex-shrink: 0;        /* prevent shrinking on small screens */
+}
+
+/* Buttons */
+button, .btn {
+    background: linear-gradient(90deg,#ff2b90,#ff5aa3);
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 3px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    margin-top: 5px;
+}
+
+/* Keyboard grid */
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.key {
+    background: linear-gradient(90deg,#ff2bdf,#ff5aa3);
+    border-radius: 12px;
+    padding: 12px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(255,43,144,0.3);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .container, form, .box { padding: 20px; }
+    h1, h2, label { font-size: 18px; }
+    input[type="text"], select, .inline-reset { height: 40px; font-size: 14px; }
+    .keyboard { grid-template-columns: repeat(auto-fit, minmax(35px, 1fr)); gap:6px; }
+
+    /* Stack select and reset button on small screens */
+    .select-reset-wrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
